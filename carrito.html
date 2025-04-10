@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ff.Css/FastF.Css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.js"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Carrito</title>
+</head>
+<body style="background-color: black;">
+    <nav class=" navbar navbar-expand-lg full-screen bg-dark">
+        <div class="container">
+           <a class="nav-link active text-white" href="index.html">
+               <img src="img/logonew.jpg" style="border-radius: 50%; object-fit: cover;" width="60"; height="50"; alt="">              
+             </a>
+              <div class="row justify-content-center">
+               <div class="col-12 col-lg-12 gx-5">
+                 <span style="color: yellow; font-size: large;" class="mt-2"  href="index.html">Demo restaurant</span>
+               </div>
+              </div>
+             <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+               <span class="navbar-toggler-icon"></span>
+             </button>            
+        </div>
+       </nav>
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <table id="tablaPedidos">
+                    <thead>
+                      <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>                 
+            </div>
+        </div>
+      </div>
+      <script>
+        window.onload = function () {
+          const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+          const tabla = document.getElementById("tablaPedidos").querySelector("tbody");
+      
+          pedidos.forEach(p => {
+            const fila = tabla.insertRow();
+            fila.insertCell(0).innerText = p.nombre;
+            fila.insertCell(1).innerText = p.precio;
+          });
+        };
+      </script>
+</body>
+</html>
