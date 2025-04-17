@@ -71,11 +71,14 @@ background-color: #1ebc5d;
     cursor: pointer;
     right: 20px;
 }
+.m{
+    border-radius: 20%;
+}
 #card{
-   background-color: rgb(100, 102, 4);
+   background-color: rgb(2, 2, 2);
 }
 .contcard{
-    background-color: rgb(41, 41, 23);
+    background-color: rgb(0, 0, 0);
 }
 .map-container {
     position: relative;
